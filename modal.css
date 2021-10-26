@@ -1,0 +1,156 @@
+.darkOverlayContainer {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 7;
+    overflow: hidden;
+}
+
+.darkOverlay {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: var(--secondary);
+    opacity: .2;
+}
+
+#modal {
+    width: 90%;
+    max-width: 750px;
+    /* overflow-y: auto; */
+    margin: 0 auto;
+    background: var(--primary-d2);
+    box-shadow: var(--box-shadow);
+    padding: 1rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: var(--border-radius);
+}
+
+#modal  .icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--secondary);
+    width: 20px;
+    height: 20px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
+    transition: .3s;
+    cursor: pointer;
+}
+
+#modal  .icon:hover,
+#modal .icon:focus {
+    background: var(--secondary-d);
+    color: var(--white-d);
+}
+
+#modal .modalHeader {
+    margin-bottom: 1rem;
+}
+
+#modal .modalHeader h1 {
+    font-size: 1.75rem;
+    margin-bottom: .5rem;
+    font-weight: bold;
+    text-shadow: var(--text-shadow);
+}
+
+#modal .modalHeader h2 {
+    font-size: 1.15rem;
+    opacity: .75;
+}
+
+#modal article {
+    width: 60%;
+    /* float: left; */
+    padding: 1rem;
+    max-height: calc(100vh - 2rem - 50px);
+    overflow-y: scroll;
+}
+
+#modal article p {
+    line-height: var(--line-height);
+    font-size: 1rem;
+}
+
+#modal article p:first-of-type {
+    margin-bottom: .5rem;
+}
+
+#modal .navButtons {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+#modal .navButtons li button {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+#modal .navButtons li {
+    min-width: 50px;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal .navButtons li a {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+#modal .navButtons li a:hover,
+#modal .navButtons li a:focus,
+#modal .navButtons li a:focus-within {
+    color: var(--white) !important;
+}
+
+#modal .navButtons li a i,
+#modal .navButtons li button i {
+    position: relative;
+    z-index: 2;
+    font-size: 20px;
+}
+
+#modal .photoContainer {
+    width: 40%;
+    /* float: left; */
+    padding: 1rem;
+}
+
+#modal .photoContainer figure {
+    width: 100%;
+    height: 100%;
+    max-width: 250px;
+    max-height: 300px;
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: var(--box-shadow);
+    /* border-radius: var(--border-radius); */
+}
+
+#modal .photoContainer figure img {
+    width: 100%;
+}

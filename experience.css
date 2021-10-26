@@ -1,0 +1,285 @@
+#experience {
+    background: var(--primary-d2);
+    width: 100vw;
+    height: 100%;
+    padding: 2rem 0rem;
+    position: relative;
+    z-index: 2;
+}
+
+.experience-container {
+    max-width: 1000px;
+    width: 100%;
+    padding: 2rem;
+    margin: 0 auto;
+    color: var(--white);
+}
+
+.experience-container .intro h1 {
+    font-size: 2rem;
+    margin-bottom: .5rem;
+    font-weight: bold;
+    text-shadow: var(--text-shadow);
+}
+
+.experience-container .intro h2 {
+    font-size: 1.15rem;
+    font-family: var(--font-handwritten);
+    color: var(--white-d);
+    opacity: .75;
+    font-weight: normal;
+}
+
+.experience-details {
+    margin: 2rem 0rem;
+    display: flex;
+    position: relative;
+}
+
+.experience-details nav {
+    width: 20%;
+    min-width: 205px;
+    margin-right: 2rem;
+}
+
+.experience-details .button-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .5rem;
+    display: none;
+}
+
+.experience-details .button-container button {
+    background: var(--secondary);
+    color: var(--white);
+    font-size: 1.5rem;
+    transition: .3s;
+}
+
+.experience-details .button-container button:hover,
+.experience-details .button-container button:focus,
+.experience-details .button-container button:focus-within {
+    background: var(--secondary-d2);
+    color: var(--white-d2);
+}
+
+.experience-details .button-container span {
+    /* font-family: var(--font-handwritten); */
+    font-weight: normal;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.experience-details nav ul li {
+    transition: .3s;
+    background: none;
+    border-right: 3px solid var(--secondary);
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+    background: linear-gradient(to left, var(--secondary) 50%,  transparent 50%) left;
+    background-size: 200%;
+    cursor: pointer;
+}
+
+.experience-details nav ul li:hover button,
+.experience-details nav ul li:focus button,
+.experience-details nav ul li:focus-within button,
+.experience-details nav ul li:focus-visible button {
+    color: var(--white);
+    opacity: 1;
+}
+
+/* .experience-details nav ul li:hover button, */
+.experience-details nav ul li:focus button,
+/* .experience-details nav ul li:focus-within button, */
+.experience-details nav ul li:focus-visible button {
+    /* border: none; */
+    /* outline: none; */
+    /* background: linear-gradient(to left, #c72bd357 50%, transparent 50%) left;
+    background-position: right;
+    background-size: 200%; */
+    text-decoration: underline;
+}
+
+
+.experience-details nav ul li button {
+    color: var(--white-d);
+    opacity: .75;
+}
+
+.experience-details nav ul li.active {
+    background-position: right;
+}
+
+.experience-details nav ul li.active button {
+    opacity: 1;
+    color: var(--white);
+}
+
+.experience-details nav ul li.active button:hover::before {
+    background: none !important;
+}
+
+.experience-details nav ul li button {
+    background: none;
+    border-right: none;
+}
+
+.experience-details nav ul li button:hover {
+    background: none;
+}
+
+.experience-details nav ul li button:hover {
+    opacity: 1;
+}
+
+.jobs-container {
+    position: relative;
+    top: 30px;
+    transition: .5s;
+    opacity: 0;
+}
+
+.jobs-container.visible {
+    top: 0px;
+    opacity: 1;
+}
+
+.job-container {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.job-container.bumper {
+    visibility: hidden;
+    position: relative !important;
+    top: 0;
+}
+
+.job-container.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.job-container .experience {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    display: flex;
+}
+
+.job-container .experience .highlight-container {
+    display: flex;
+    margin-left: 5px;
+}
+
+.job-container .experience .company {
+    color: var(--secondary) !important;
+    position: relative;
+    cursor: pointer;
+}
+
+.job-container .experience .company::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--secondary);
+    transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.job-container .experience .company:hover::before,
+.job-container .experience .company:focus::before,
+.job-container .experience .company:focus-within::before {
+    border: none;
+    /* outline: none; */
+    left: 0;
+    right: auto;
+    width: 100%;
+}
+
+.job-container .experience .company a {
+    color: var(--secondary) !important;
+    text-decoration: none;
+}
+
+.job-container .experience .company a:hover,
+.job-container .experience .company a:focus,
+.job-container .experience .company a:focus-within,
+.job-container .experience .company a:focus-visible {
+    border: none !important;
+    outline: none !important;
+}
+
+.job-container .experience .at {
+    color: var(--secondary);
+}
+
+.job-container .date {
+    color: var(--white-d);
+    opacity: .75;
+}
+
+.job-container .description {
+    margin-top: 1rem;
+    line-height: var(--line-height);
+    font-size: 1.1rem;
+}
+
+.job-container ul {
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+}
+
+.job-container ul li {
+    list-style: inside;
+    color: var(--secondary);
+    margin-bottom: .5rem;
+}
+
+.job-container ul li span {
+    color: var(--white);
+    font-size: 1.1rem;
+}
+
+@media screen and (max-width: 650px) {
+    /* .experience */
+
+    .experience-details {
+        flex-direction: column !important;
+    }
+
+    .experience-details nav {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .experience-details nav .button-container {
+        display: flex;
+    }
+    
+    .experience-details nav ul {
+        display: none !important;
+        display: flex;
+    }
+
+    .experience-details nav ul li {
+        background: none;
+        border-right: none;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .experience {
+        display: block !important;
+    }
+
+    .experience  .highlight-container {
+        margin-left: 0px !important;
+    }
+}

@@ -1,0 +1,334 @@
+#about {
+    background: var(--white);
+    width: 100vw;
+    height: 100%;
+    padding: 2rem 0rem;
+}
+
+.about-container {
+    padding: 2rem;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.about-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-shadow: var(--text-shadow);
+}
+
+/* ====================||||||||||||||||||||\================================ */
+
+.about-container .bio-adjustment {
+    margin-bottom: 2rem;
+}
+
+.about-container fieldset {
+
+}
+
+.about-container fieldset legend {
+    font-family: var(--font-handwritten);
+    color: var(--primary);
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+}
+
+.about-container .adjustment-options {
+    align-items: center;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(6,1fr);
+    width: 200px;
+    margin-left: 10px;
+}
+
+.bio-button-container {
+    cursor: pointer;
+    height: 50px;
+    position: relative;
+}
+
+.bio-button {
+    height: 100%;
+    left: 0;
+    margin: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.bio-button:focus + label::before,
+.bio-button:checked + label::before {
+    outline: 2px solid var(--secondary);
+    outline-offset: .3rem;
+}
+
+.bio-button:checked + label::after {
+    background: var(--secondary);
+}
+
+.bio-button:checked::after {
+    background: var(--secondary);
+}
+
+.bio-button:checked + label::before {
+    border: 2px solid var(--secondary);
+    z-index: 10;
+}
+
+.bio-button-container label {
+    cursor: pointer;
+    font-size: .75rem;
+    position: relative;
+}
+
+.bio-button-container label::before,
+.bio-button-container label::after {
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 0;
+    left: 50%;
+    padding: 8px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 1rem;
+}
+
+.bio-button-container label::before {
+    border: 2px solid var(--secondary);
+    z-index: 10;
+}
+
+.bio-button-container label::after {
+    /* background: var(--secondary); */
+    z-index: 10;
+}
+
+.bio-button-container label:hover::after,
+.bio-button-container label:focus::after {
+    background: var(--secondary);
+    z-index: 10;
+}
+
+.bio-button-container label span {
+    position: absolute;
+    top: 20px;
+    left: -15px;
+    width: 101px;
+    font-size: 1rem;
+    color: var(--primary);
+    font-family: var(--font-handwritten);
+    transform: rotate(-10deg);
+    visibility: hidden;
+}
+
+.bio-button-container label.visible span {
+    visibility: visible;
+}
+
+/* ====================||||||||||||||||||||\================================ */
+
+.about-container .bio-container {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 1rem;
+}
+
+.about-container .bio-container .bio-text-container {
+    width: 70%;
+    max-width: 500px;
+    margin-right: 2rem;
+}
+
+.about-container .bio-container .bio-text-container p {
+    font-size: 1.15rem;
+    line-height: var(--line-height);
+    margin-bottom: 1rem;
+}
+
+.about-container .bio-container .bio-text-container p:first-of-type {
+    margin-bottom: .5rem;
+}
+
+.about-container .bio-container .bio-text-container p:last-of-type {
+    margin-top: .5rem;
+    margin-bottom: 0rem;
+}
+
+.about-container .bio-text-container ul {
+    list-style-type: disc;
+    margin-left: calc(1rem + 8px);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(140px, 200px));
+    gap: 0px 10px;
+}
+
+.about-container .bio-text-container ul li {
+    color: var(--secondary);
+    margin-bottom: .5rem;
+}
+
+.about-container .bio-text-container ul li span {
+    color: var(--dark);
+}
+
+
+.about-container .bio-container .bio-text-container p .highlight {
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--secondary);
+    cursor: pointer;
+    z-index: 1;
+    font-weight: bold;
+    padding: .25rem;
+    border-radius: 0px;
+    text-transform: lowercase;
+    outline: none;
+    font-size: 1rem;
+}
+
+.about-container .bio-container .bio-text-container p .highlight:hover,
+.about-container .bio-container .bio-text-container p .highlight:focus,
+.about-container .bio-container .bio-text-container p .highlight:focus-visible,
+.about-container .bio-container .bio-text-container p .highlight:focus-within {
+    outline: none;
+    border: none;
+}
+
+
+.about-container .bio-container .bio-text-container p .highlight::after{
+    content: "";
+    background: var(--secondary-l);
+    opacity: .2;
+    position: absolute;
+    left: 8px;
+    bottom: -3px;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    z-index: 0;
+    transition: 0.35s cubic-bezier(0.25, 0.1, 0, 2.05);
+}
+
+.about-container .bio-container .bio-text-container p .active::after,
+.about-container .bio-container .bio-text-container p .highlight:hover::after,
+.about-container .bio-container .bio-text-container p .highlight:focus::after,
+.about-container .bio-container .bio-text-container p .highlight:focus-visible::after,
+.about-container .bio-container .bio-text-container p .highlight:focus-within::after {
+    outline: none;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 100%;
+}
+
+#long-sentence-a,
+#long-sentence-b {
+    display: none;
+}
+
+.about-container .bio-container .bio-photo-container {
+    width: 100%;
+    max-width: 350px;
+    height: 100%;
+    min-height: 350px;
+    margin: 0 auto;
+    /* opacity: 0; */
+    transition: .3s;
+    position: relative;
+}
+
+.about-container .bio-container .bio-photo-container.visible {
+    opacity: 1;
+}
+
+.about-container .bio-container .bio-photo-container .bio-photo {
+    transition: .3s;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    width: 100%;
+}
+
+.about-container .bio-container .bio-photo-container .bio-photo.visible {
+    opacity: 1;
+}
+
+.about-container .bio-container .bio-photo-container figure {
+    margin-bottom: 0rem;
+    /* width: 75%; */
+    /* max-width: 40%; */
+    height: 100%;
+    max-height: 350px;
+    overflow: hidden;
+    margin: 0 auto;
+    /* box-shadow: var(--box-shadow); */
+    transition: .3s;
+    background: transparent;
+}
+
+.about-container .bio-container .bio-photo-container figure::before {
+    /* content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -8px;
+    border-radius: inherit;
+    background: linear-gradient(to right, var(--secondary) 70%, var(--primary)); */
+}
+
+.about-container .bio-container .bio-photo-container figure img {
+    width: 100%;
+    height: 100%;
+}
+
+.about-container .bio-container .bio-photo-container .bio-photo-label {
+    max-width: 250px;
+    margin: 0 auto;
+    padding: .75rem;
+    background: var(--primary);
+    box-shadow: var(--box-shadow);
+    color: var(--white);
+    position: relative;
+    top: -15px;
+    left: 3px;
+    transform: rotate(5deg);
+}
+
+.about-container .bio-container .bio-photo-container .bio-photo-label h1 {
+    margin-bottom: 0rem;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: var(--font-handwritten);
+    font-weight: normal;
+}
+
+@media screen and (max-width: 800px) {
+
+    .about-container .bio-container {
+        flex-direction: column;
+    }
+
+    .about-container .bio-container .bio-photo-container {
+        margin-top: 2rem;
+    }
+
+    .bio-text-container {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin-right: 0rem !important;
+    }
+
+
+}

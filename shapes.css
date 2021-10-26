@@ -1,0 +1,143 @@
+.shapes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+    filter: blur(5px);
+    /* left: 40vw; */
+    /* opacity: .3; */
+    margin: 0 auto;
+    overflow-y: hidden;
+    /* overflow-x: visible; */
+    transition: .3s;
+}
+
+.circle,
+.square,
+.triangle {
+    /* padding: 3rem; */
+    background: transparent;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    position: absolute;
+    top: -110%;
+    left: 45%;
+}
+
+.circle {
+    border-radius: 50%;
+    animation: rise ease infinite;
+}
+
+.square {
+    border-radius: 0px;
+    animation: rise ease infinite;
+}
+
+.cira,
+.cird {
+    border: 2px solid var(--secondary);
+}
+
+.cirb, 
+.cire {
+    border: 2px solid #E45A84; 
+}
+
+.circ,
+.cirf {
+    border: 2px solid #FFACAC;
+}
+
+.triangle {
+    animation: rise ease infinite;
+}
+
+.triangle svg {
+    width: 50px;
+    height: 50px;
+    fill: transparent;
+    /* stroke: green; */
+    stroke-width: 2px;
+}
+
+.triangle.cirg {
+    stroke: var(--secondary);
+}
+
+.triangle.cirh {
+    stroke: #E45A84; 
+}
+
+.triangle.ciri {
+    stroke: #FFACAC;
+}
+
+.shape:nth-child(1) {
+    left:10%;
+    animation-duration:13s;
+    animation-delay: 2.5s;
+}
+
+.shape:nth-child(2) {
+    left:30%;
+    animation-duration:10s;
+    animation-delay:4s;
+}
+
+.shape:nth-child(3) {
+    left:50%;
+    animation-duration:11s;
+    animation-delay:8s;
+}
+
+.shape:nth-child(4){
+    left:53%;
+    animation-duration:9s;
+    animation-delay:2s;
+}
+
+.shape:nth-child(5){
+    left:35%;
+    animation-duration:15s;
+    animation-delay:5s;
+}
+
+.shape:nth-child(6){
+    left:16%;
+    animation-duration:8s;
+    animation-delay: 6s;
+}
+
+.shape:nth-child(7){
+    left:37%;
+    animation-duration:12s;
+    animation-delay:3s;
+}
+
+.shape:nth-child(8){
+    left:18%;
+    animation-duration:11s;
+    animation-delay:5s;
+}
+
+.shape:nth-child(9){
+    left:58%;
+    animation-duration:10s;
+    animation-delay:9s;
+}
+
+@keyframes rise{
+    0%{
+      top: 105%;
+      transform:translateX(0) rotate(0deg);
+    }
+    50%{
+      transform:translateX(100px) rotate(360deg);
+    }
+    100%{
+      top: -10%;
+      transform:translateX(-150px) rotate(0deg);
+    }
+  }

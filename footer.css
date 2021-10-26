@@ -1,0 +1,225 @@
+footer {
+    width: 100%;
+    max-width: 100vw;
+    background: var(--primary-d2);
+    /* position: fixed;
+    bottom: 0; */
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+footer .layer--1,
+footer .layer--2,
+footer .layer--3 {
+    position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 100%;
+	left: 0;
+	bottom: auto;
+	right: auto;
+	background: #48466d;
+	transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
+    z-index: 5;
+}
+
+footer .layer--1.active,
+footer .layer--2.active,
+footer .layer--3.active {
+    top: -100%;
+}
+
+footer .layer--1 {
+    background-color: var(--primary-d2);
+    top: 0%;
+}
+
+footer .layer--2 {
+    background-color: var(--secondary);
+    transition-delay: .05s;
+}
+
+footer .layer--3 {
+    background-color: var(--primary);
+    transition-delay: .1s;
+}
+
+.footContainer {
+    max-width: 1000px;
+    width: 100%;
+    padding: 2rem 2rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: var(--white);
+}
+
+.footContainer .left {
+    width: 70%;
+    float: left;
+}
+
+.footContainer .left .text {
+    margin-bottom: 1rem;
+}
+
+.footContainer .left .text h1 {
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+    font-weight: bold;
+}
+
+.footContainer .left .text p {
+    font-size: 1.15rem;
+    margin-bottom: 0;
+}
+
+.footContainer .left ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.footContainer .left ul li {
+    margin-right: 1rem;
+}
+
+.footContainer .left ul li button {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    z-index: 0 ;
+}
+
+.footContainer .left ul li button i,
+.footContainer .left ul li a i {
+    font-size: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.footContainer .left ul li a {
+    padding: .75rem;
+    /* font-weight: bold; */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    background-color: transparent;
+    background-position: top center;
+    position: relative;
+    color: #ECF1F4;
+    background-image: var(--splash-gradient);
+    background-size: 400%;
+    background-position: 0% 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.footContainer .gradientButton::before {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: var(--border-radius);
+    background-image: var(--splash-gradient);
+    background-size: 500%;
+    background-position: 0% 0%;
+    filter: blur(10px);
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 0.3s;
+}
+
+.footContainer .left ul li a:hover,
+.footContainer .left ul li a:focus,
+.footContainer .left ul li a:focus-within {
+    animation: gradientRotate 2s infinite;
+}
+
+.footContainer .left ul li a:hover::before,
+.footContainer .left ul li a:focus::before,
+.footContainer .left ul li a:focus-within::before {
+    opacity: 1 !important;
+    animation: gradientRotate 2s infinite;
+}
+
+
+.footerContainer .right {
+    width: 30%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.footContainer .navlink {
+    display: inline-block;
+    margin-bottom: 16px;
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+
+.lastThoughts {
+    background: var(--primary-d2);
+}
+
+.lastThoughtsContainer {
+    padding: 1rem 2rem;
+    color: var(--white-d);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.lastThoughtsContainer span {
+    margin-bottom: 0rem;
+}
+
+.lastThoughtsContainer span:first-of-type {
+    margin-bottom: .5rem;
+}
+
+.lastThoughtsContainer span {
+    font-size: .75rem;
+    opacity: .75;
+}
+
+.footContainer  input {
+    display: none;
+}
+
+@media screen and (max-width: 550px) {
+    .footContainer {
+        flex-direction: column;
+        padding-bottom: 0rem;
+    }
+
+    .footContainer .left {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .end {
+        margin-bottom: 0px !important;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .lastThoughtsContainer {
+        flex-direction: column;
+    }
+}

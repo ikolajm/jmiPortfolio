@@ -1,0 +1,172 @@
+:root {
+	--font: 'Manrope', sans-serif;
+	--font-handwritten: 'Permanent Marker', cursive;
+
+	--primary-d1: #171735;
+	--primary-d2: #31314F;
+	--primary: #0077B6;
+	--primary-l2: #646482;
+	--primary-l1: #7D7D9B;
+	--secondary-d2: #a122aa;
+	--secondary-d: #b326bd;
+	--secondary: #c72bd3;
+	--secondary-l: #cd3fd7;
+	--white-d2: #b1c5d2;
+	--white-d: #cddae2;
+	--white: #ECF1F4;
+	--white-l: #edf2f5;
+	--dark-d: #42425d;
+	--dark: #4A4A68;
+	--dark-l: #57577b;
+	--success: #3EE079;
+
+	--border-radius: 5px !important;
+
+	--text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+	--box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);;
+
+	--splash-gradient: linear-gradient(90deg, #C72BD3, #A638CE, #c244c9, #A638CE, #C72BD3, #A638CE);
+
+	--line-height: 1.5rem;
+}
+
+/* ::ng-deep button {
+	border-radius: var(--border-radius) !important;
+} */
+
+/* Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	line-height: 1;
+    font-family: var(--font);
+	max-width: 100vw;
+	overflow-x: hidden;
+}
+
+main {
+	width: 100vw;
+    overflow: hidden;
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+button {
+    text-transform: uppercase !important;
+    padding: .75rem;
+    border-radius: var(--border-radius);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+/* Toast */
+#toast {
+	padding: 1rem;
+	visibility: hidden;
+	min-width: 250px;
+	transform: translateX(-50%);
+	background-color: var(--secondary);
+	color: var(--white);
+	border-radius: var(--border-radius);
+	position: fixed;
+	z-index: 5;
+	left: 50%;
+	bottom: 30px; 
+	/* transition: .3s; */
+	display: flex;
+	align-items: center;
+	/* opacity: 1; */
+}
+
+.showToast {
+	visibility: visible !important;
+	-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  	animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+	from {bottom: 0; opacity: 0;}
+	to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+	from {bottom: 0; opacity: 0;}
+	to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+	from {bottom: 30px; opacity: 1;}
+	to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+	from {bottom: 30px; opacity: 1;}
+	to {bottom: 0; opacity: 0;}
+  }
+
+
+#toast i {
+	font-size: 20px;
+	margin-right: 10px;
+}
+
+#toast p {
+	margin-bottom: 0rem;
+	font-size: 1rem;
+}
+
+@media screen and (max-width: 550px) {
+	#toast i {
+		font-size: 16px;
+		margin-right: 10px;
+	}
+	
+	#toast p {
+		margin-bottom: 0rem;
+		font-size: .9rem;
+	}
+}

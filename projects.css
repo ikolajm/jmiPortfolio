@@ -1,0 +1,303 @@
+#projects {
+    background: var(--white);
+    width: 100vw;
+    height: 100%;
+    padding: 50px 0rem;
+    position: relative;
+    z-index: 2;
+    /* margin-bottom: 255px; */
+}
+
+.projects-container {
+    padding: 0rem 2rem;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.projects-container .intro {
+    margin-bottom: 2rem;
+}
+
+.projects-container .intro h1 {
+    font-size: 2rem;
+    margin-bottom: .5rem;
+    font-weight: bold;
+    text-shadow: var(--text-shadow);
+    color: var(--primary-d2);
+}
+
+.projects-container .intro h2 {
+    color: var(--primary);
+    font-family: var(--font-handwritten);
+    font-weight: normal;
+    font-size: 1.15rem;
+}
+
+.projects-container .intro h2 a {
+    color: var(--secondary);
+    text-decoration: none;
+    /* font-weight: bold; */
+    position: relative;
+}
+
+.projects-container .intro h2 a::before{
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary);
+    transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.projects-container .intro h2 a:hover::before,
+.projects-container .intro h2 a:focus::before,
+.projects-container .intro h2 a:focus-within::before {
+    left: 0;
+    right: auto;
+    width: 100%;
+}
+
+.projects-container .intro h2 a:focus,
+.projects-container .intro h2 a:focus-visible,
+.projects-container .intro h2 a:focus-within {
+    /* outline-color: var(--secondary);
+    outline-offset: .25rem; */
+    outline: none;
+}
+
+/* ================================ */
+
+.projects {
+    display: flex;
+}
+
+.projects-container .project {
+    min-height: 400px;
+    height: 100%;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    margin-bottom: 3rem;
+    transition: .3s;
+}
+
+.projects-container #projectA {
+    margin-right: 4rem;
+    /* border: 1px solid var(--secondary); */
+    border-radius: var(--border-radius);
+}
+
+.projects-container #projectB {
+    border: 1px solid var(--primary-d2);
+    border-radius: var(--border-radius);
+}
+
+.projects-container .project:hover figure {
+    box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.2)
+
+}
+
+.projects-container .project .project-image,
+.projects-container .project .project-image .project-image-overlay {
+    position: absolute;
+    min-height: 400px;
+    height: 100%;
+    width: 100%;
+    max-width: 500px;   
+    border-radius: var(--border-radius);
+}
+
+.projects-container .project.left .project-image {
+    left: 0;
+}
+
+.projects-container .project.reverse .project-image {
+    right: 0;
+}
+
+.projects-container .project .project-image figure {
+    min-height: 400px;
+    height: 100%;
+    width: 100%;
+    max-width: 500px;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    /* box-shadow: var(--box-shadow); */
+}
+
+.projects-container .project .project-image figure.tellem {
+    background: url("/assets/tellemScreenshot.PNG");
+    background-size: cover;
+    background-position: center;
+}
+
+.projects-container .project .project-image figure.jason {
+    background: url("/assets/JakeIkola.PNG");
+    background-size: cover;
+    background-position: center;
+}
+
+.projects-container .project .project-image figure img {
+    visibility: hidden;
+}
+
+.projects-container .project .project-text {
+    min-height: 400px;
+    height: 100%;
+    width: 100%;
+    max-width: 500px;
+    transition: .3s;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+.projects-container .project .project-text h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: .25rem;
+    text-shadow: var(--text-shadow);
+    width: 100%;
+}
+
+.projects-container .project .project-text .card {
+    position:absolute;
+    /* padding: 1.5rem; */
+    line-height: var(--line-height);
+    box-shadow: var(--box-shadow);
+    background: var(--primary-d2);
+    color: var(--white);
+    /* transform-style: preserve-3d;
+    transform: perspective(1000px); */
+    min-height: 320px;
+    height: 100%;
+    width: 100%;
+    max-width: 500px;
+    top: 100%;
+    transition: .3s;
+    /* transition-delay: .6s; */
+    text-align: left;
+    border-radius: var(--border-radius);
+}
+
+.projects-container .project:hover {
+    box-shadow: var(--box-shadow);
+}
+
+.projects-container .project .project-text .card .card-text {
+    padding: 1rem;
+    margin-top: 20px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.projects-container .project .project-text .button-container {
+    position: absolute;
+    top: 80%;
+}
+
+.projects-container .project .project-text button {
+    position: absolute;
+    top: 80%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--dark);
+    transition: .3s;
+    margin-left: -25px;
+    z-index: 2;
+    transform: rotate(0deg);
+    box-shadow: var(--box-shadow);
+}
+
+
+.projects-container .project .project-text .card.visible {
+    top: 20%;
+}
+
+.projects-container .project .project-text button.turned {
+    transform: rotate(45deg);
+}
+
+.projects-container .project .project-text button.pulled {
+    top: calc(20% - 25px);
+    /* transition-delay: .3s; */
+}
+
+.projects-container .project .project-links {
+    display: inline-block;
+    margin-top: .5rem;
+    text-align: right;
+}
+
+.projects-container .project .project-links a {
+    margin-bottom: .5rem;
+    font-weight: bold;
+    font-size: .75rem;
+    position: relative;
+    display: inline-block;
+    transition: .3s;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--white);
+    /* transform: translateZ(20px); */
+}
+
+.projects-container .project .project-links a:hover,
+.projects-container .project .project-links a:focus,
+.projects-container .project .project-links a:focus-within {
+    color: var(--secondary) !important;
+    outline: none;
+}
+
+.projects-container .project .project-links a::before{
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary);
+    transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.projects-container .project .project-links a:hover::before,
+.projects-container .project .project-links a:focus::before,
+.projects-container .project .project-links a:focus-within::before {
+    left: 0;
+    right: auto;
+    width: 100%;
+}
+
+.projects-container .project .card .tech-container ul {
+    max-width: 500px;
+    margin-bottom: .25rem;
+}
+
+.projects-container .project .card .tech-container ul li {
+    display: inline-block;
+    margin-right: 5px;
+    color: var(--white-d);
+    font-style: italic;
+    font-size: .75rem;
+}
+
+@media screen and (max-width: 700px) {
+    .projects {
+        flex-direction: column !important;
+        align-items: center;
+    }
+
+    #projectA {
+        margin-right: 0rem !important;
+    }
+}
