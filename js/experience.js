@@ -1,6 +1,6 @@
+// On scroll in, check to see if the animation has fired yet or not
 const expThreshold = [.50];
 for (let i = .51; i <= 1; i += .01) {
-    // console.log(i)
     expThreshold.push(i);
     i += .01;
     i = Number(i.toFixed(2))
@@ -16,11 +16,9 @@ const experienceSwitch = () => {
 }
 const experienceContainer = document.querySelector('#experience');
 let expObserver = new IntersectionObserver(entries =>  {
-    // console.log(entries)
 	// isIntersecting is true when element and viewport are overlapping
 	// isIntersecting is false when element and viewport don't overlap
 	if(entries[0].intersectionRatio >  0)
-		// console.log('Bring in the classes');
         experienceSwitch();
 }, { threshold: expThreshold });
 expObserver.observe(experienceContainer);
@@ -33,17 +31,15 @@ const navLinkClick = (newLinkNumber) => {
     setTimeout(setJobExperience(newLinkNumber), 300)
 }
 
+// Swap the job description that is showing
 let currentExperience = "";
 const swapExperience = (newExp) => {
-    // e.preventDefault();
-    // console.log('swappedexp')
-    // console.log(newExp)
     if (newExp === currentExperience) return;
     currentExperience = newExp;
-    const all = document.querySelectorAll(".experienceListItem");
-    const one = document.querySelector("#efaLi")
-    const two = document.querySelector("#propelupLi")
-    const three = document.querySelector("#freelanceLi")
+    const all = document.querySelectorAll(".experience-list-item");
+    const one = document.querySelector("#efa-li")
+    const two = document.querySelector("#propelup-li")
+    const three = document.querySelector("#freelance-li")
     const container = document.querySelector(".jobs-container");
 
     all.forEach(el => el.classList.remove("active"));
@@ -67,9 +63,9 @@ const swapExperience = (newExp) => {
 
 const swapDescription = (newExp) => {
     const all = document.querySelectorAll(".job-container");
-    const one = document.querySelector("#efaDesc")
-    const two = document.querySelector("#propelupDesc")
-    const three = document.querySelector("#freelanceDesc")
+    const one = document.querySelector("#efa-desc")
+    const two = document.querySelector("#propelup-desc")
+    const three = document.querySelector("#freelance-desc")
     const container = document.querySelector(".jobs-container");
 
     all.forEach(el => el.classList.remove("active"));
@@ -91,10 +87,10 @@ const swapDescription = (newExp) => {
 
 let currentPosition = 1;
 const shiftJob = direction => {
-    const leftBtn = document.querySelector("#leftBtn");
-    const rightBtn = document.querySelector("#rightBtn");
+    const leftBtn = document.querySelector("#left-btn");
+    const rightBtn = document.querySelector("#right-btn");
     const all = [leftBtn, rightBtn];
-    const text = document.querySelector("#positionIndicator");
+    const text = document.querySelector("#position-indicator");
     let toSend = "";
 
     all.forEach(element => element.disabled = false);

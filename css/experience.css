@@ -2,7 +2,6 @@
     background: var(--primary-d2);
     width: 100vw;
     height: 100%;
-    padding: 2rem 0rem;
     position: relative;
     z-index: 2;
 }
@@ -15,14 +14,14 @@
     color: var(--white);
 }
 
-.experience-container .intro h1 {
+.experience__introduction h1 {
     font-size: 2rem;
     margin-bottom: .5rem;
     font-weight: bold;
     text-shadow: var(--text-shadow);
 }
 
-.experience-container .intro h2 {
+.experience__introduction h2 {
     font-size: 1.15rem;
     font-family: var(--font-handwritten);
     color: var(--white-d);
@@ -30,19 +29,19 @@
     font-weight: normal;
 }
 
-.experience-details {
+.experience__details {
     margin: 2rem 0rem;
     display: flex;
     position: relative;
 }
 
-.experience-details nav {
+.experience__details nav {
     width: 20%;
     min-width: 205px;
     margin-right: 2rem;
 }
 
-.experience-details .button-container {
+.experience-button-container {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -51,28 +50,27 @@
     display: none;
 }
 
-.experience-details .button-container button {
+.experience-button-container button {
     background: var(--secondary);
     color: var(--white);
     font-size: 1.5rem;
     transition: .3s;
 }
 
-.experience-details .button-container button:hover,
-.experience-details .button-container button:focus,
-.experience-details .button-container button:focus-within {
+.experience-button-container button:hover,
+.experience-button-container button:focus,
+.experience-button-container button:focus-within {
     background: var(--secondary-d2);
     color: var(--white-d2);
 }
 
-.experience-details .button-container span {
-    /* font-family: var(--font-handwritten); */
+.experience-button-container span {
     font-weight: normal;
     color: var(--white);
     font-size: 1.5rem;
 }
 
-.experience-details nav ul li {
+.experience-list-item {
     transition: .3s;
     background: none;
     border-right: 3px solid var(--secondary);
@@ -83,55 +81,48 @@
     cursor: pointer;
 }
 
-.experience-details nav ul li:hover button,
-.experience-details nav ul li:focus button,
-.experience-details nav ul li:focus-within button,
-.experience-details nav ul li:focus-visible button {
+.experience-list-item:hover button,
+.experience-list-item:focus button,
+.experience-list-item:focus-within button,
+.experience-list-item:focus-visible button {
     color: var(--white);
     opacity: 1;
 }
 
-/* .experience-details nav ul li:hover button, */
-.experience-details nav ul li:focus button,
-/* .experience-details nav ul li:focus-within button, */
-.experience-details nav ul li:focus-visible button {
-    /* border: none; */
-    /* outline: none; */
-    /* background: linear-gradient(to left, #c72bd357 50%, transparent 50%) left;
-    background-position: right;
-    background-size: 200%; */
+.experience-list-item:focus button,
+.experience-list-item:focus-visible button {
     text-decoration: underline;
 }
 
 
-.experience-details nav ul li button {
+.experience-list-item button {
     color: var(--white-d);
     opacity: .75;
 }
 
-.experience-details nav ul li.active {
+.experience-list-item.active {
     background-position: right;
 }
 
-.experience-details nav ul li.active button {
+.experience-list-item.active button {
     opacity: 1;
     color: var(--white);
 }
 
-.experience-details nav ul li.active button:hover::before {
+.experience-list-item.active button:hover::before {
     background: none !important;
 }
 
-.experience-details nav ul li button {
+.experience-list-item button {
     background: none;
     border-right: none;
 }
 
-.experience-details nav ul li button:hover {
+.experience-list-item button:hover {
     background: none;
 }
 
-.experience-details nav ul li button:hover {
+.experience-list-item button:hover {
     opacity: 1;
 }
 
@@ -248,27 +239,25 @@
 }
 
 @media screen and (max-width: 650px) {
-    /* .experience */
-
-    .experience-details {
+    .experience__details {
         flex-direction: column !important;
     }
 
-    .experience-details nav {
+    .experience__details nav {
         width: 100%;
         margin-bottom: 1rem;
     }
 
-    .experience-details nav .button-container {
+    .experience-button-container {
         display: flex;
     }
     
-    .experience-details nav ul {
+    .experience__details nav ul {
         display: none !important;
         display: flex;
     }
 
-    .experience-details nav ul li {
+    .experience-list-item {
         background: none;
         border-right: none;
     }

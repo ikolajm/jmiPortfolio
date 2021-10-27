@@ -1,13 +1,11 @@
 const threshold = [.70];
 for (let i = .71; i <= 1; i += .01) {
-    // console.log(i)
     threshold.push(i);
     i += .01;
     i = Number(i.toFixed(2))
 }
 const footer = document.querySelector('#footer');
 let footerObserver = new IntersectionObserver(entries =>  {
-    // console.log(entries)
 	// isIntersecting is true when element and viewport are overlapping
 	// isIntersecting is false when element and viewport don't overlap
 	if(entries[0].intersectionRatio >  0){

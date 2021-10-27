@@ -1,28 +1,6 @@
-let text = document.querySelector('.project-text');
-// VanillaTilt.init(text)
-
-// let _projectSwitchA = 0;
-// const projectSwitchAFunc = () => {
-//     if (_projectSwitchA === 0) {
-//         return _projectSwitchA++
-//     }
-//     _projectSwitchA++;
-//     // document.querySelector('#tellemPhotoContainer').setAttribute('data-aos', 'fade-right');
-//     projectObserverA.disconnect();
-// }
-// const projectA = document.querySelector('#projectA');
-// let projectObserverA = new IntersectionObserver(entries =>  {
-//     console.log(entries)
-// 	if(entries[0].intersectionRatio >  0)
-// 		console.log('Bring in the classes');
-//         projectSwitchAFunc();
-// }, { threshold: [.7] });
-// projectObserverA.observe(projectA);
-
 const toggleProjectA = () => {
-    const project = document.querySelector('#projectA');
-    const button = document.querySelector('#buttonA');
-    const card = document.querySelector('#cardA');
+    const button = document.querySelector('#project__button-a');
+    const card = document.querySelector('#project__card-a');
     if (!card.classList.contains('visible')) {
         // Turn the button 45deg
         button.classList.toggle('turned');
@@ -47,9 +25,8 @@ const toggleProjectA = () => {
 }
 
 const toggleProjectB = () => {
-    const project = document.querySelector('#projectB');
-    const button = document.querySelector('#buttonB');
-    const card = document.querySelector('#cardB');
+    const button = document.querySelector('#project__button-b');
+    const card = document.querySelector('#project__card-b');
     if (!card.classList.contains('visible')) {
         // Turn the button 45deg
         button.classList.toggle('turned');

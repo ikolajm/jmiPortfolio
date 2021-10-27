@@ -7,7 +7,6 @@ const sfx = {
         src: ["https://res.cloudinary.com/jlengstorf/video/upload/q_auto/v1593395252/jason.af/sfx/click.mp3"]
     })
 }
-
 const playPop = () => {
     sfx.click.play();
 }
@@ -27,7 +26,6 @@ const swapBio = (num) => {
         default:
             toggleAboutLength('long');
     }
-    // console.log(bioIndex)
 }
 
 const toggleAboutLength = (length) => {

@@ -18,10 +18,9 @@
     align-items: center;
 }
 
-.splash-container .coloredOverlay {
+.mobile-background {
     display: block;
     background: var(--primary);
-    /* background: var(--splash-gradient); */
     transform: skew(-14deg) translateX(-150%);
     width: 120vw;
     height: 100vh;
@@ -31,9 +30,11 @@
     box-shadow: var(--box-shadow);
 }
 
-.splash-container .coloredOverlay.visible {
+.mobile-background.visible {
     transform: skew(-14deg) translateX(-25%);
 }
+
+/* Shapes can be found in /shapes.css */
 
 header {
     position: absolute;
@@ -41,67 +42,62 @@ header {
     right: 0%;
 }
 
-header .mobileNavContainer {
+.mobile-nav-container {
     color: var(--white);
     font-size: 1.5rem;
     text-align: center;
-    /* padding: 1rem; */
-    /* opacity: .75; */
     display: none;
     position: relative;
     top: 1rem;
     right: 2rem;
     transition: .3s;
     z-index: 6;
-    /* display: flex; */
     flex-direction: column;
     align-items: flex-end;
 }
 
-header .mobileNavContainer .clickableContainer {
+.clickable-mobile-container {
     cursor: pointer;
     opacity: .75;
     transition: .3s;
 }
 
-header .mobileNavContainer .clickableContainer:hover {
+.clickable-mobile-container:hover {
     opacity: 1 !important;
 }
 
-header .mobileNavContainer .icon {
+.mobile-icon {
     width: 30px;
     height: 30px;
     margin-right: 0px;
     right: 0;
 }
 
-header .mobileNavContainer .icon i {
+.mobile-icon i {
     opacity: 0;
-    /* display: none; */
     width: 30px;
     height: 30px;
     position: absolute;
     right: .25rem;
 }
 
-header .mobileNavContainer .icon i.visible {
+.mobile-icon i.visible {
     opacity: 1 !important;
 }
 
-header .mobileNavContainer span {
+.mobile-nav-container span {
     font-size: .9rem;
     top: -3px;
     position: relative;
     font-family: var(--font-handwritten);
 }
 
-header nav {
-    /* display: none; */
+#splash-nav {
     position: relative;
     width: 100vw;
     top: 0;
     left: 0;
-    padding: 1rem;
+    padding: 2rem;
     z-index: 5;
     font-weight: bold;
     margin-right: 10px;
@@ -110,11 +106,19 @@ header nav {
     opacity: 0;
 }
 
-header nav.visible {
+#splash-nav.visible {
     opacity: 1;
 }
 
-header nav.mobile ul {
+#splash-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+}
+
+#splash-nav.mobile ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -123,53 +127,33 @@ header nav.mobile ul {
     margin-left: 1rem;
 }
 
-header nav.mobile ul li {
-    padding: .5rem;
+.splash-nav__list-item {
     margin-bottom: 1rem;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
-header nav.mobile ul li a {
+.nav-link {
     opacity: 1;
-    color: var(--white);
-}
-
-header nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    list-style: none;
-}
-
-header nav ul li {
-    padding: .5rem
-}
-
-.navlink {
     position: relative;
     color: var(--white-d);
     text-decoration: none;
     transition: .5s ease;
     display: block;
     text-decoration: none;
+    font-size: 1.15rem;
+    margin-right: 1rem;
+    padding: 0rem;
 }
 
-.navlink:hover,
-.navlink:focus,
-.navlink:focus-within {
-    color: var(--secondary);
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:focus-within {
+    color: var(--secondary) !important;
     border: none;
     outline: none;
 }
 
-#splashNav.mobile .navlink,
-#splashNav.mobile .navlink:focus,
-#splashNav.mobile .navlink:focus-within {
-    color: var(--white) !important;
-}
-
-.navlink::before{
+.nav-link::before{
     content: '';
     position: absolute;
     bottom: -8px;
@@ -180,16 +164,12 @@ header nav ul li {
     transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.navlink:hover::before,
-.navlink:focus::before,
-.navlink:focus-within::before {
+.nav-link:hover::before,
+.nav-link:focus::before,
+.nav-link:focus-within::before {
     left: 0;
     right: auto;
     width: 100%;
-}
-
-.navButtons {
-    display: none;
 }
 
 .splash-hero {
@@ -291,77 +271,20 @@ header nav ul li {
     font-size: 1rem;
 }
 
-.splash-button-container {
-    margin-bottom: 1rem;
-}
-
-.gradientButton {
-    text-transform: uppercase !important;
-    padding: .75rem;
-    border-radius: var(--border-radius);
-    outline: none;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-    background-color: transparent;
-    background-position: top center;
-    position: relative;
-    color: #ECF1F4;
-    background-image: var(--splash-gradient);
-    background-size: 400%;
-    border-radius: var(--border-radius);
-    background-position: 0% 0%;
-}
-
-.gradientButton::before {
-    content: '';
-    position: absolute;
-    left: -2px;
-    top: -2px;
-    right: -2px;
-    bottom: -2px;
-    border-radius: var(--border-radius);
-    background-image: var(--splash-gradient);
-    background-size: 500%;
-    background-position: 0% 0%;
-    filter: blur(10px);
-    opacity: 0;
-    z-index: -1;
-    transition: opacity 0.2s;
-}
-
-.gradientButton:hover,
-.gradientButton:focus,
-.gradientButton:focus-within {
-    animation: gradientRotate 2s infinite;
-}
-
-.gradientButton:hover::before,
-.gradientButton:focus::before,
-.gradientButton:focus-within::before {
-    opacity: 1 !important;
-    animation: gradientRotate 2s infinite;
-}
-
-@keyframes gradientRotate {
-    0% {
-      background-position: 0% 0%;
-    }
-    100% {
-      background-position: 100% 100%;
-    }
-}
-
 @media screen and (max-width: 550px) {
-    header nav {
+    #splash-nav {
         opacity: 0;
     }
 
-    header nav ul {
+    #splash-nav ul {
         display: none;
     }
 
-    header .mobileNavContainer {
+    .nav-link{
+        font-size: 2rem;
+    }
+
+    .mobile-nav-container {
         display: flex;
     }
 
