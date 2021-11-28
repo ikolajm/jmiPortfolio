@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/experience.css">
     <link rel="stylesheet" href="css/projects.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/shapes.css">
     <script src="https://kit.fontawesome.com/17d529d602.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -68,9 +69,9 @@
                     <nav id="splash-nav">
                         <ul>
                             <li id="about-link" class="splash-nav__list-item"><a class="nav-link" onClick="mainNavClick('about')" href="#about">About</a></li>
-                            <li id="experience-link" class="splash-nav__list-item"><a class="nav-link" href="#experience">Experience</a></li>
-                            <li id="project-link"class="splash-nav__list-item"><a class="nav-link" href="#projects">Projects</a></li>
-                            <li id="contact-link" class="splash-nav__list-item"><a class="nav-link" href="#footer">Contact</a></li>
+                            <li id="experience-link" class="splash-nav__list-item"><a class="nav-link" onClick="mainNavClick('experience')" href="#experience">Experience</a></li>
+                            <li id="project-link"class="splash-nav__list-item"><a class="nav-link" onClick="mainNavClick('projects')" href="#projects">Projects</a></li>
+                            <li id="contact-link" class="splash-nav__list-item"><a class="nav-link" onClick="mainNavClick('footer')" href="#footer">Contact</a></li>
                         </ul>
                     </nav>
                 </header>
@@ -154,22 +155,22 @@
                         <p>
                             Here are some technologies I've recently been working&nbsp;with:
                             <ul>
-                                <li><span>SCSS</span></li>
                                 <li><span>React</span></li>
                                 <li><span>TypeScript</span></li>
                                 <li><span>Node</span></li>
                                 <li><span>PostgreSQL</span></li>
-                                <li><span>Figma</span></li>
+                                <li><span>Heroku</span></li>
+                                <li><span>Netlify</span></li>
                             </ul>
                         </p>
     
                         <p>
-                            When I'm not working, I have a variety of interests that keep me away from my keyboard - I like to get outside and get active when I can.
+                            When I'm not working, I have a variety of interests that keep me away from my keyboard - I like to get outside and be active when I can.
                             <span id="default-sentence-b">
                                 I love pick up basketball and riding my <button class="highlight" tabindex="0" onClick="swapPhoto('skateboard')">skateboard</button>! 
                             </span>
                             <span id="long-sentence-b">
-                                Lately, I've been trying my hand at playing the guitar and <button class="highlight" tabindex="0" onClick="swapPhoto('art')">digital&nbsp;art</button>. I really get enjoyment from experiences that I can share with others!
+                                Lately, I've been trying my hand at playing the guitar and <button class="highlight" tabindex="0" onClick="swapPhoto('art')">digital&nbsp;art</button>. I get a lot of enjoyment from experiences that I can share with others!
                             </span>
                         </p>
                     </article>
@@ -260,7 +261,7 @@
                                         <span>Built various full stack web applications as a part of 1-4 person teams</span>
                                     </li>
                                     <li>
-                                        <span>Awarded the teamwork award by class vote</span>
+                                        <span>Awarded the teamwork award by class vote for my willingness to help my peers</span>
                                     </li>
                                 </ul>
                             </div>
@@ -307,7 +308,7 @@
                                 (March 2021 - Present)
                             </span>
                             <div class="description">
-                                <p>After my time at PropelUp, I set out to improve my design skills, working in Figma, Inkscape, and Gimp. I also studied to see where my UX/UI knowledge lacked and began finding ways to incorporate those principles into my layouts. This lead me to some freelance opportunities where I was able to work on projects that had me participating in both design and development discussions.</p>
+                                <p>After my time at PropelUp, I set out to improve my design skills, working in Figma, Inkscape, and Gimp. I also studied to see where my UX/UI knowledge lacked and began finding ways to incorporate those principles into my layouts. This led me to some freelance opportunities where I was able to work on projects that had me participating in both design and development discussions.</p>
                                 <ul>
                                     <li>
                                         <span>
@@ -318,7 +319,7 @@
                                         <span>Worked independently and collaboratively in a remote environment to create full-stack applications with JavaScript</span>
                                     </li>
                                     <li>
-                                        <span>Created prototypes for client walkthroughs using Figma</span>
+                                        <span>Created wireframes, mockups, and prototypes for client walkthroughs using Figma</span>
                                     </li>
                                 </ul>
                             </div>
@@ -369,7 +370,7 @@
             <div class="projects-container">
                 <div class="projects__intro">
                     <h1>Featured Projects</h1>
-                    <h2>To view my work, check out <a href="">my&nbsp;pinned&nbsp;repositories</a></h2>
+                    <h2>To view my work, check out <a href="https://github.com/ikolajm" target="_blank">my&nbsp;pinned&nbsp;repositories</a></h2>
                 </div>
                 <div class="projects">
 
@@ -389,9 +390,18 @@
                                 <figure class="tellem">
                                     <img src="assets/tellemScreenshot.PNG" alt="screenshot of Tellem" />
                                 </figure>
+                                <!-- <video id="tellem-video" poster="assets/tellemScreenshot.PNG" class="tellem" src="/assets/tellem edit.mov"></video> -->
                             </div>
                             <article class="project__text">
-                                <button id="project__button-a" onClick="toggleProjectA()">
+                                <!-- <div id="video-toggle">
+                                    <button class="show" onClick="toggleTellemPlay()">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                    <button onClick="toggleTellemPlay()">
+                                        <i class="fas fa-pause"></i>
+                                    </button>
+                                </div> -->
+                                <button class="project-text-button" id="project__button-a" onClick="toggleProjectA()">
                                     <i class="fas fa-plus"></i>
                                 </button>
                                 <div id=project__card-a class="card">
@@ -399,21 +409,23 @@
                                         <h1>Tellem</h1>
                                         <div class="project__card-list">
                                             <ul>
-                                                <li>React</li>
-                                                <li>TypeScript</li>
                                                 <li>SCSS</li>
+                                                <li>React</li>
+                                                <li>Socket.IO</li>
                                                 <li>Node</li>
                                                 <li>PostgreSQL</li>
                                                 <li>Heroku</li>
+                                                <li>Netlify</li>
                                             </ul>
                                         </div>
                                         <p>
-                                            A more simple form of text and image messaging. Users are able to have conversations with up to 5 others!
+                                            Based off of Discord, Tellem is a more simple form of text messaging. Users are able to have conversations with up to 5 other users!
                                         </p>
                                         <div class="project__links">
-                                            <a tabindex="0" href="">Follow project link <i class="fas fa-external-link-alt"></i></a>
-                                            <br>
-                                            <a href="" tabindex="0">View video demonstration <i class="fas fa-video"></i></a>
+                                            <a tabindex="0" href="https://tellem.netlify.app/" target="_blank">Follow project link <i class="fas fa-external-link-alt"></i></a>
+                                            <!-- <br> -->
+                                            <!-- <a href="" tabindex="0">View video demonstration <i class="fas fa-video"></i></a> -->
+                                            <a data-bs-toggle="modal" data-bs-target="#tellemModal">View video demonstration <i class="fas fa-video"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -437,7 +449,7 @@
                                 </figure>
                             </div>
                             <article class="project__text">
-                                <button id="project__button-b" onClick="toggleProjectB()">
+                                <button class="project-text-button" id="project__button-b" onClick="toggleProjectB()">
                                     <i class="fas fa-plus"></i>
                                 </button>
                                 <div id=project__card-b class="card">
@@ -452,12 +464,12 @@
                                             </ul>
                                         </div>
                                         <p>
-                                            I believe that as a developer, my website is something to show you how I could help solve your web based needs.
+                                            I believe that as a developer, my website is something to tell you a little about myself, as well as show you how I could help solve your web based needs.
                                         </p>
                                         <div class="project__links">
-                                            <a tabindex="0" href="">Follow project link <i class="fas fa-external-link-alt"></i></a>
-                                            <br>
-                                            <a href="" tabindex="0">View video demonstration <i class="fas fa-video"></i></a>
+                                            <!-- <a tabindex="0" href="">Follow project link <i class="fas fa-external-link-alt"></i></a>
+                                            <br> -->
+                                            <!-- <a href="" tabindex="0">View video demonstration <i class="fas fa-video"></i></a> -->
                                         </div>
                                     </div>
                                 </div>
@@ -492,7 +504,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="gradient-button" tabindex="0">
+                            <a href="assets/Jacob_Ikola_Resume.pdf" target="_blank" class="gradient-button" tabindex="0">
                                 <i class="fas fa-file-alt"></i>
                             </a>
                         </li>
@@ -522,6 +534,23 @@
         <div id="toast">
             <i class="fas fa-check"></i>
             <p>Email copied to clipboard!</p>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="tellemModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <!-- <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <video controls id="tellem-video" poster="assets/tellemScreenshot.PNG" class="tellem" src="/assets/tellem edit.mov"></video>
+                </div>
+            </div>
+            </div>
         </div>
 
     </main>

@@ -60,6 +60,8 @@
     outline: 2px solid var(--secondary);
     outline-offset: .3rem;
     border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%
 }
 
 .bio-button:checked + label::after {
